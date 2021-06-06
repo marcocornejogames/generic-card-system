@@ -6,7 +6,7 @@ using UnityEngine;
 public class Deck : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private List<Card> _cards;
+    public List<Card> Cards;
 
 
 }
