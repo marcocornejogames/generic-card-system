@@ -20,5 +20,10 @@ public class Card : MonoBehaviour
     {
         _spriteRenderer.GetComponent<SpriteRenderer>();
     }
+
+    public void Declare()
+    {
+        Debug.Log("I declare!");
+    }
 }
 
