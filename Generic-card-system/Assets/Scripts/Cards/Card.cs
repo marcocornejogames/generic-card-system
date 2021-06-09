@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 //Marco, June 5th 2021 ___________________________________________________
 public class Card : MonoBehaviour
@@ -14,6 +15,9 @@ public class Card : MonoBehaviour
     public Sprite CardBack;
     public bool FrontFacing = true;
 
+    [Header("Events")]
+    [SerializeField] private UnityEvent<Card> _addToPlayerHandEvent;
+
 
     //_______________________________________________________UNITY METHODS
     private void Start()
@@ -21,9 +25,9 @@ public class Card : MonoBehaviour
         _spriteRenderer.GetComponent<SpriteRenderer>();
     }
 
-    public void Declare()
+    public void Click()
     {
-        Debug.Log("I declare!");
+        _addToPlayerHandEvent.Invoke(this);
     }
 }
 
